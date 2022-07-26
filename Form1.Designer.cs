@@ -49,6 +49,7 @@
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.купитьЛицензиюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             this.treeView1.CheckBoxes = true;
             this.treeView1.FullRowSelect = true;
-            this.treeView1.Location = new System.Drawing.Point(58, 280);
+            this.treeView1.Location = new System.Drawing.Point(58, 294);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Узел1";
             treeNode1.Text = "Казань";
@@ -84,7 +85,7 @@
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(317, 148);
+            this.treeView1.Size = new System.Drawing.Size(317, 134);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -160,11 +161,21 @@
             this.оПрограммеToolStripMenuItem2.Size = new System.Drawing.Size(215, 26);
             this.оПрограммеToolStripMenuItem2.Text = "О программе";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.Color.DimGray;
+            this.progressBar1.Location = new System.Drawing.Point(411, 294);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(166, 42);
+            this.progressBar1.TabIndex = 4;
+            this.progressBar1.Value = 70;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 440);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.button1);
@@ -196,5 +207,6 @@
         private ToolStripMenuItem оПрограммеToolStripMenuItem1;
         private ToolStripMenuItem купитьЛицензиюToolStripMenuItem;
         private ToolStripMenuItem оПрограммеToolStripMenuItem2;
+        private ProgressBar progressBar1;
     }
 }
