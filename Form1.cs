@@ -16,5 +16,20 @@ namespace WeatherParserHttpGet
         {
 
         }
+
+        private void îÏğîãğàììåToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void îÏğîãğàììåToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
