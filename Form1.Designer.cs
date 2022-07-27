@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Казань");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Рыбная Слобода");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Татарстан", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Москва");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Реутов");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Московский регион", new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode11});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Казань");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Рыбная Слобода");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Татарстан", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Москва");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Реутов");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Московский регион", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5});
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -72,21 +72,21 @@
             this.treeView1.Location = new System.Drawing.Point(51, 220);
             this.treeView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.treeView1.Name = "treeView1";
-            treeNode7.Name = "Узел1";
-            treeNode7.Text = "Казань";
-            treeNode8.Name = "Узел2";
-            treeNode8.Text = "Рыбная Слобода";
-            treeNode9.Name = "Татарстан";
-            treeNode9.Text = "Татарстан";
-            treeNode10.Name = "Узел4";
-            treeNode10.Text = "Москва";
-            treeNode11.Name = "Узел6";
-            treeNode11.Text = "Реутов";
-            treeNode12.Name = "Узел3";
-            treeNode12.Text = "Московский регион";
+            treeNode1.Name = "Узел1";
+            treeNode1.Text = "Казань";
+            treeNode2.Name = "Узел2";
+            treeNode2.Text = "Рыбная Слобода";
+            treeNode3.Name = "Татарстан";
+            treeNode3.Text = "Татарстан";
+            treeNode4.Name = "Узел4";
+            treeNode4.Text = "Москва";
+            treeNode5.Name = "Узел6";
+            treeNode5.Text = "Реутов";
+            treeNode6.Name = "Узел3";
+            treeNode6.Text = "Московский регион";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode12});
+            treeNode3,
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(278, 102);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -158,10 +158,10 @@
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.Color.DimGray;
-            this.progressBar1.Location = new System.Drawing.Point(360, 220);
+            this.progressBar1.Location = new System.Drawing.Point(354, 220);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(145, 32);
+            this.progressBar1.Size = new System.Drawing.Size(150, 32);
             this.progressBar1.TabIndex = 4;
             this.progressBar1.Value = 70;
             // 

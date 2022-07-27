@@ -38,17 +38,17 @@ namespace WeatherParserHttpGet
 
         public void DisplayWeather (WeatherResponse weather, RichTextBox textBox)
         {
-            textBox.Text = "Прогноз погоды на текущий день:";
+            textBox.Text = "Прогноз погоды на текущий день:\n";
 
-            textBox.Text += "Погода: " + weather.description;
-            textBox.Text += "Ветер: " + weather.wind;
-            textBox.Text += "Температура: " + weather.temperature;
+            textBox.Text += "\nПогода: " + weather.description;
+            textBox.Text += "\nВетер: " + weather.wind;
+            textBox.Text += "\nТемпература: " + weather.temperature;
 
             foreach (var item in weather.forecast)
             {
-                textBox.Text += "\nДень: " + item.day;
-                textBox.Text += "Температура: " + item.temperature;
-                textBox.Text += "Ветер: " + item.wind;
+                textBox.Text += "\n\nДень: " + item.day;
+                textBox.Text += "\nТемпература: " + item.temperature;
+                textBox.Text += "\nВетер: " + item.wind;
             }
         }
     }
