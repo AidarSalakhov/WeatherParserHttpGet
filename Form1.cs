@@ -5,12 +5,12 @@ namespace WeatherParserHttpGet
         public Form1()
         {
             InitializeComponent();
+            Program.regions.PrintRegions(Regions.ParseRegions(), listBox1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(), richTextBox1);
-            GetCities();
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -38,25 +38,29 @@ namespace WeatherParserHttpGet
 
         }
 
-        public void GetCities()
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                StreamReader streamReader = new StreamReader("cities.txt");
-                CitiesTreeBuilder tree = new CitiesTreeBuilder();
-                var nodes = tree.GetListNode(streamReader).ToArray();
-                treeView1.Nodes.Clear();
-                foreach (var item in nodes) treeView1.Nodes.Add(item);
-                streamReader.Dispose();
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
