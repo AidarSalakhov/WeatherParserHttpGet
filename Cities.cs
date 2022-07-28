@@ -39,7 +39,7 @@ namespace WeatherParserHttpGet
 
         public static void PrintCities(List<Cities> cities)
         {
-           
+
         }
 
         public static string GetCityUrl(int cityNumber)

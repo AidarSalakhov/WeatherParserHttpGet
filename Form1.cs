@@ -1,13 +1,15 @@
 namespace WeatherParserHttpGet
 {
+    
+
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            Program.regions.PrintRegions(Regions.ParseRegions(), listBox1);
-
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
+            Program.regions.PrintRegions(Regions.ParseRegions(), regionsListBox);
+            Data.listBoxRegions = regionsListBox;
+            regionsListBox.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace WeatherParserHttpGet
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            string selectedRegion = listBox1.SelectedItem.ToString();
+            string selectedRegion = regionsListBox.SelectedItem.ToString();
 
             MessageBox.Show(Convert.ToString(Regions.GetRegionIndex(selectedRegion)));
 
@@ -70,5 +72,9 @@ namespace WeatherParserHttpGet
         {
 
         }
+
+        
     }
+
+    
 }
