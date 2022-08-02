@@ -59,11 +59,13 @@ namespace WeatherParserHttpGet
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            
-
             string selectedRegion = regionsListBox.SelectedItem.ToString();
 
-            Program.cities.PrintCities(Cities.ParseCities(Regions.GetRegionUrl(selectedRegion)), citiesListBox);
+            Cities.listOfCities.Clear();
+
+            Cities.listOfCities = Cities.ParseCities(Regions.GetRegionUrl(selectedRegion));
+
+            Program.cities.PrintCities(Cities.listOfCities, citiesListBox);
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
