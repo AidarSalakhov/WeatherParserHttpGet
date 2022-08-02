@@ -22,7 +22,7 @@ namespace WeatherParserHttpGet
         public string description { get; set; }
         public List<Forecast> forecast { get; set; }
 
-        public WeatherResponse GetWeather(string city = "Moscow")
+        public WeatherResponse GetWeather(string city)
         {
             string url = $"https://goweather.herokuapp.com/weather/{city}";
 
@@ -36,9 +36,9 @@ namespace WeatherParserHttpGet
             }
         }
 
-        public void DisplayWeather (WeatherResponse weather, RichTextBox textBox)
+        public void DisplayWeather (WeatherResponse weather, RichTextBox textBox, string cityName)
         {
-            textBox.Text = "Прогноз погоды на текущий день:\n";
+            textBox.Text = $"{cityName}. Прогноз погоды на текущий день:\n";
 
             textBox.Text += "\nПогода: " + weather.description;
             textBox.Text += "\nВетер: " + weather.wind;
