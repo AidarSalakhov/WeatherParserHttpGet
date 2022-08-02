@@ -3,6 +3,9 @@ namespace WeatherParserHttpGet
     internal static class Program
     {
         public static WeatherResponse weatherResponse;
+        public static Regions regions;
+        public static Cities cities;
+
 
         /// <summary>
         ///  The main entry point for the application.
@@ -11,7 +14,6 @@ namespace WeatherParserHttpGet
         static void Main()
         {
             Init();
-
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
@@ -19,6 +21,8 @@ namespace WeatherParserHttpGet
         static void Init()
         {
             weatherResponse = new WeatherResponse();
+            regions = new Regions();
+            cities = new Cities();
         }
     }
 }
