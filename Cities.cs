@@ -37,9 +37,18 @@ namespace WeatherParserHttpGet
             return listOfCities;
         }
 
-        public static void PrintCities(List<Cities> cities)
+        public void PrintCities(List<Cities> cities, ListBox listBox)
         {
+            string[] citiesList = new string[cities.Count];
 
+            for (int i = 0; i < citiesList.Length; i++)
+            {
+                citiesList[i] = cities[i]._cityName;
+            }
+
+            listBox.Items.Clear();
+
+            listBox.Items.AddRange(citiesList);
         }
 
         public static string GetCityUrl(int cityNumber)

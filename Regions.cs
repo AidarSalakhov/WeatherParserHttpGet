@@ -49,15 +49,17 @@ namespace WeatherParserHttpGet
             return url;
         }
 
-        public static int GetRegionIndex(string regionName)
+        public static string GetRegionUrl(string regionName)
         {
-            Regions region = new Regions();
+            foreach (var region in listOfRegions)
+            {
+                if (region._regionName == regionName)
+                {
+                    return region._regionUrl;
+                }
+            }
 
-            region._regionName = regionName;
-
-            int index = listOfRegions.IndexOf(region);
-
-            return index;
+            return string.Empty;
         }
 
         public void PrintRegions(List<Regions> regions, ListBox listBox)
