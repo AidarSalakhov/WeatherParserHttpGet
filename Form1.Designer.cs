@@ -54,6 +54,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(487, 377);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
@@ -230,6 +231,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Weather Parser HTTP GET";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).EndInit();

@@ -4,6 +4,8 @@ namespace WeatherParserHttpGet
 
     public partial class Form1 : Form
     {
+        public static string selectedCity;
+
         public Form1()
         {
             InitializeComponent();
@@ -14,7 +16,7 @@ namespace WeatherParserHttpGet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(), richTextBox1);
+            Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(selectedCity), richTextBox1, selectedCity);
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -60,20 +62,21 @@ namespace WeatherParserHttpGet
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string selectedRegion = regionsListBox.SelectedItem.ToString();
-
             Cities.listOfCities.Clear();
-
             Cities.listOfCities = Cities.ParseCities(Regions.GetRegionUrl(selectedRegion));
-
             Program.cities.PrintCities(Cities.listOfCities, citiesListBox);
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            button1.Enabled = true;
+            selectedCity = citiesListBox.SelectedItem.ToString();
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     
