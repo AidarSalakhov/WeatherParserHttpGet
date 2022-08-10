@@ -36,7 +36,6 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.купитьЛицензиюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -92,18 +91,19 @@
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
             this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оПрограммеToolStripMenuItem1,
-            this.купитьЛицензиюToolStripMenuItem,
             this.оПрограммеToolStripMenuItem2});
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
@@ -113,21 +113,16 @@
             // оПрограммеToolStripMenuItem1
             // 
             this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
-            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem1.Text = "Справка";
             this.оПрограммеToolStripMenuItem1.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem1_Click);
-            // 
-            // купитьЛицензиюToolStripMenuItem
-            // 
-            this.купитьЛицензиюToolStripMenuItem.Name = "купитьЛицензиюToolStripMenuItem";
-            this.купитьЛицензиюToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.купитьЛицензиюToolStripMenuItem.Text = "Купить лицензию";
             // 
             // оПрограммеToolStripMenuItem2
             // 
             this.оПрограммеToolStripMenuItem2.Name = "оПрограммеToolStripMenuItem2";
-            this.оПрограммеToolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
+            this.оПрограммеToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem2.Text = "О программе";
+            this.оПрограммеToolStripMenuItem2.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem2_Click);
             // 
             // progressBar1
             // 
@@ -263,7 +258,6 @@
         private ToolStripMenuItem выходToolStripMenuItem;
         private ToolStripMenuItem оПрограммеToolStripMenuItem;
         private ToolStripMenuItem оПрограммеToolStripMenuItem1;
-        private ToolStripMenuItem купитьЛицензиюToolStripMenuItem;
         private ToolStripMenuItem оПрограммеToolStripMenuItem2;
         private ProgressBar progressBar1;
         private RichTextBox richTextBox1;
