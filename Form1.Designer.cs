@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bGetWeather = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,7 +37,7 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.forecastBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.regionsListBox = new System.Windows.Forms.ListBox();
@@ -46,23 +46,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.citiesCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.clearRichTextBox = new System.Windows.Forms.Button();
+            this.bClearRichTextBox = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(487, 377);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Узнать погоду";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bGetWeather.BackColor = System.Drawing.Color.Gold;
+            this.bGetWeather.Enabled = false;
+            this.bGetWeather.Location = new System.Drawing.Point(487, 377);
+            this.bGetWeather.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bGetWeather.Name = "button1";
+            this.bGetWeather.Size = new System.Drawing.Size(134, 42);
+            this.bGetWeather.TabIndex = 0;
+            this.bGetWeather.Text = "Узнать погоду";
+            this.bGetWeather.UseVisualStyleBackColor = false;
+            this.bGetWeather.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -126,13 +126,13 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.BackColor = System.Drawing.Color.DimGray;
-            this.progressBar1.Location = new System.Drawing.Point(487, 235);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(134, 33);
-            this.progressBar1.TabIndex = 4;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            this.progressBar.BackColor = System.Drawing.Color.DimGray;
+            this.progressBar.Location = new System.Drawing.Point(487, 235);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.progressBar.Name = "progressBar1";
+            this.progressBar.Size = new System.Drawing.Size(134, 33);
+            this.progressBar.TabIndex = 4;
+            this.progressBar.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // richTextBox1
             // 
@@ -206,22 +206,22 @@
             // 
             // clearRichTextBox
             // 
-            this.clearRichTextBox.BackColor = System.Drawing.Color.Gold;
-            this.clearRichTextBox.Enabled = false;
-            this.clearRichTextBox.Location = new System.Drawing.Point(488, 329);
-            this.clearRichTextBox.Name = "clearRichTextBox";
-            this.clearRichTextBox.Size = new System.Drawing.Size(133, 43);
-            this.clearRichTextBox.TabIndex = 13;
-            this.clearRichTextBox.Text = "Очистить данные";
-            this.clearRichTextBox.UseVisualStyleBackColor = false;
-            this.clearRichTextBox.Click += new System.EventHandler(this.clearRichTextBox_Click);
+            this.bClearRichTextBox.BackColor = System.Drawing.Color.Gold;
+            this.bClearRichTextBox.Enabled = false;
+            this.bClearRichTextBox.Location = new System.Drawing.Point(488, 329);
+            this.bClearRichTextBox.Name = "clearRichTextBox";
+            this.bClearRichTextBox.Size = new System.Drawing.Size(133, 43);
+            this.bClearRichTextBox.TabIndex = 13;
+            this.bClearRichTextBox.Text = "Очистить данные";
+            this.bClearRichTextBox.UseVisualStyleBackColor = false;
+            this.bClearRichTextBox.Click += new System.EventHandler(this.clearRichTextBox_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 536);
-            this.Controls.Add(this.clearRichTextBox);
+            this.Controls.Add(this.bClearRichTextBox);
             this.Controls.Add(this.citiesCheckedListBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -229,8 +229,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.regionsListBox);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.bGetWeather);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
@@ -251,7 +251,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button bGetWeather;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem файлToolStripMenuItem;
         private ToolStripMenuItem сохранитьToolStripMenuItem;
@@ -259,7 +259,7 @@
         private ToolStripMenuItem оПрограммеToolStripMenuItem;
         private ToolStripMenuItem оПрограммеToolStripMenuItem1;
         private ToolStripMenuItem оПрограммеToolStripMenuItem2;
-        private ProgressBar progressBar1;
+        private ProgressBar progressBar;
         private RichTextBox richTextBox1;
         private BindingSource forecastBindingSource;
         private ListBox regionsListBox;
@@ -268,6 +268,6 @@
         private Label label3;
         private Label label4;
         private CheckedListBox citiesCheckedListBox;
-        private Button clearRichTextBox;
+        private Button bClearRichTextBox;
     }
 }
