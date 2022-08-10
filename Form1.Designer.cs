@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.citiesCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.clearRichTextBox = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -208,11 +209,24 @@
             this.citiesCheckedListBox.TabIndex = 12;
             this.citiesCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
+            // clearRichTextBox
+            // 
+            this.clearRichTextBox.BackColor = System.Drawing.Color.Gold;
+            this.clearRichTextBox.Enabled = false;
+            this.clearRichTextBox.Location = new System.Drawing.Point(488, 329);
+            this.clearRichTextBox.Name = "clearRichTextBox";
+            this.clearRichTextBox.Size = new System.Drawing.Size(133, 43);
+            this.clearRichTextBox.TabIndex = 13;
+            this.clearRichTextBox.Text = "Очистить данные";
+            this.clearRichTextBox.UseVisualStyleBackColor = false;
+            this.clearRichTextBox.Click += new System.EventHandler(this.clearRichTextBox_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 536);
+            this.Controls.Add(this.clearRichTextBox);
             this.Controls.Add(this.citiesCheckedListBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -260,5 +274,6 @@
         private Label label3;
         private Label label4;
         private CheckedListBox citiesCheckedListBox;
+        private Button clearRichTextBox;
     }
 }

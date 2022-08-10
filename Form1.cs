@@ -24,6 +24,8 @@ namespace WeatherParserHttpGet
                 Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(selectedCityList[i]), richTextBox1, selectedCityList[i]);
                 progressBar1.Value = i;
             }
+
+            clearRichTextBox.Enabled = true;
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -94,6 +96,11 @@ namespace WeatherParserHttpGet
             button1.Enabled = true;
 
             selectedCityList.Add(citiesCheckedListBox.SelectedItem.ToString());
+        }
+
+        private void clearRichTextBox_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
         }
     }
 
