@@ -42,11 +42,11 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.forecastBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.regionsListBox = new System.Windows.Forms.ListBox();
-            this.citiesListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.citiesCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -161,16 +161,6 @@
             this.regionsListBox.TabIndex = 6;
             this.regionsListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
-            // citiesListBox
-            // 
-            this.citiesListBox.FormattingEnabled = true;
-            this.citiesListBox.ItemHeight = 15;
-            this.citiesListBox.Location = new System.Drawing.Point(244, 235);
-            this.citiesListBox.Name = "citiesListBox";
-            this.citiesListBox.Size = new System.Drawing.Size(219, 184);
-            this.citiesListBox.TabIndex = 7;
-            this.citiesListBox.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -208,16 +198,26 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Погода";
             // 
+            // citiesCheckedListBox
+            // 
+            this.citiesCheckedListBox.CheckOnClick = true;
+            this.citiesCheckedListBox.FormattingEnabled = true;
+            this.citiesCheckedListBox.Location = new System.Drawing.Point(245, 235);
+            this.citiesCheckedListBox.Name = "citiesCheckedListBox";
+            this.citiesCheckedListBox.Size = new System.Drawing.Size(218, 184);
+            this.citiesCheckedListBox.TabIndex = 12;
+            this.citiesCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 536);
+            this.Controls.Add(this.citiesCheckedListBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.citiesListBox);
             this.Controls.Add(this.regionsListBox);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.progressBar1);
@@ -255,10 +255,10 @@
         private RichTextBox richTextBox1;
         private BindingSource forecastBindingSource;
         private ListBox regionsListBox;
-        private ListBox citiesListBox;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
+        private CheckedListBox citiesCheckedListBox;
     }
 }

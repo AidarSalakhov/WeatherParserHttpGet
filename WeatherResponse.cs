@@ -36,20 +36,22 @@ namespace WeatherParserHttpGet
             }
         }
 
+                
         public void DisplayWeather (WeatherResponse weather, RichTextBox textBox, string cityName)
         {
-            textBox.Text = $"{cityName}. Прогноз погоды на текущий день:\n";
-
-            textBox.Text += "\nПогода: " + weather.description;
-            textBox.Text += "\nВетер: " + weather.wind;
-            textBox.Text += "\nТемпература: " + weather.temperature;
+            textBox.AppendText($"{cityName}. Прогноз погоды на текущий день:\n");
+            textBox.AppendText("\nПогода: " + weather.description);
+            textBox.AppendText("\nВетер: " + weather.wind);
+            textBox.AppendText("\nТемпература: " + weather.temperature);
 
             foreach (var item in weather.forecast)
             {
-                textBox.Text += "\n\nДень: " + item.day;
-                textBox.Text += "\nТемпература: " + item.temperature;
-                textBox.Text += "\nВетер: " + item.wind;
+                textBox.AppendText("\n\nДень: " + item.day);
+                textBox.AppendText("\nТемпература: " + item.temperature);
+                textBox.AppendText("\nВетер: " + item.wind);
             }
+
+            textBox.AppendText("\n============================\n\n");
         }
     }
 
