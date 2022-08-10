@@ -17,15 +17,25 @@ namespace WeatherParserHttpGet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            progressBar1.Maximum = selectedCityList.Count() - 1;
+            richTextBox1.Clear();
+
+            progressBar.Maximum = selectedCityList.Count() - 1;
 
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
                 Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(selectedCityList[i]), richTextBox1, selectedCityList[i]);
-                progressBar1.Value = i;
+                progressBar.Value = i;
             }
 
-            clearRichTextBox.Enabled = true;
+            foreach (int i in citiesCheckedListBox.CheckedIndices)
+            {
+                citiesCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
+            }
+            
+            selectedCityList.Clear();
+
+            bGetWeather.Enabled = false;
+            bClearRichTextBox.Enabled = true;
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -98,14 +108,16 @@ namespace WeatherParserHttpGet
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            button1.Enabled = true;
+            bGetWeather.Enabled = true;
 
             selectedCityList.Add(citiesCheckedListBox.SelectedItem.ToString());
         }
 
         private void clearRichTextBox_Click(object sender, EventArgs e)
         {
+            progressBar.Value = 0;
             richTextBox1.Clear();
+            bClearRichTextBox.Enabled = false;
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,7 +133,11 @@ namespace WeatherParserHttpGet
 
         private void оПрограммеToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)\nРазработчик: Айдар Салахов\nКазань, 2022");
+            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)" +
+                "\nРазработчик: Айдар Салахов" +
+                "\nКазань, 2022\n" +
+                "\nПарсинг погоды производится с сайта: https://goweather.herokuapp.com/weather/" +
+                "\nПарсинг городов производится с сайта: https://world-weather.ru/pogoda/russia/");
         }
     }
 
