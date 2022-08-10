@@ -51,13 +51,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // bGetWeather
             // 
             this.bGetWeather.BackColor = System.Drawing.Color.Gold;
             this.bGetWeather.Enabled = false;
             this.bGetWeather.Location = new System.Drawing.Point(487, 377);
             this.bGetWeather.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bGetWeather.Name = "button1";
+            this.bGetWeather.Name = "bGetWeather";
             this.bGetWeather.Size = new System.Drawing.Size(134, 42);
             this.bGetWeather.TabIndex = 0;
             this.bGetWeather.Text = "Узнать погоду";
@@ -113,23 +113,23 @@
             // оПрограммеToolStripMenuItem1
             // 
             this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
-            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem1.Text = "Справка";
             this.оПрограммеToolStripMenuItem1.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem1_Click);
             // 
             // оПрограммеToolStripMenuItem2
             // 
             this.оПрограммеToolStripMenuItem2.Name = "оПрограммеToolStripMenuItem2";
-            this.оПрограммеToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem2.Text = "О программе";
             this.оПрограммеToolStripMenuItem2.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem2_Click);
             // 
-            // progressBar1
+            // progressBar
             // 
             this.progressBar.BackColor = System.Drawing.Color.DimGray;
             this.progressBar.Location = new System.Drawing.Point(487, 235);
             this.progressBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.progressBar.Name = "progressBar1";
+            this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(134, 33);
             this.progressBar.TabIndex = 4;
             this.progressBar.Click += new System.EventHandler(this.progressBar1_Click);
@@ -204,12 +204,12 @@
             this.citiesCheckedListBox.TabIndex = 12;
             this.citiesCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
-            // clearRichTextBox
+            // bClearRichTextBox
             // 
             this.bClearRichTextBox.BackColor = System.Drawing.Color.Gold;
             this.bClearRichTextBox.Enabled = false;
             this.bClearRichTextBox.Location = new System.Drawing.Point(488, 329);
-            this.bClearRichTextBox.Name = "clearRichTextBox";
+            this.bClearRichTextBox.Name = "bClearRichTextBox";
             this.bClearRichTextBox.Size = new System.Drawing.Size(133, 43);
             this.bClearRichTextBox.TabIndex = 13;
             this.bClearRichTextBox.Text = "Очистить данные";
@@ -220,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 536);
+            this.ClientSize = new System.Drawing.Size(633, 433);
             this.Controls.Add(this.bClearRichTextBox);
             this.Controls.Add(this.citiesCheckedListBox);
             this.Controls.Add(this.label4);
