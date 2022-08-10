@@ -106,6 +106,15 @@ namespace WeatherParserHttpGet
         private void clearRichTextBox_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+            selectedCityList.Clear();
+            
+            clearRichTextBox.Enabled = false;
+            button1.Enabled = false;
+
+            foreach (int i in citiesCheckedListBox.CheckedIndices)
+            {
+                citiesCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
+            }
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,7 +130,11 @@ namespace WeatherParserHttpGet
 
         private void оПрограммеToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)\nРазработчик: Айдар Салахов\nКазань, 2022");
+            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)" +
+                "\nРазработчик: Айдар Салахов" +
+                "\nКазань, 2022\n" +
+                "\nПарсинг погоды производится с сайта: https://goweather.herokuapp.com/weather/" +
+                "\nПарсинг городов производится с сайта: https://world-weather.ru/pogoda/russia/");
         }
     }
 

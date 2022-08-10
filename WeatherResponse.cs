@@ -28,16 +28,25 @@ namespace WeatherParserHttpGet
 
             using (var webClient = new WebClient())
             {
-                var response = webClient.DownloadString(url);
+                string response;
 
+                try
+                {
+                    response = webClient.DownloadString(url);
+                }
+                catch (Exception)
+                {
+                    response = "{\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\",\"description\":\"Нет данных\",\"forecast\":[{\"day\":\"1\",\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\"},{\"day\":\"2\",\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\"},{\"day\":\"3\",\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\"}]}";
+                }
+                
                 WeatherResponse weather = JsonConvert.DeserializeObject<WeatherResponse>(response);
 
                 return weather;
             }
         }
 
-                
-        public void DisplayWeather (WeatherResponse weather, RichTextBox textBox, string cityName)
+
+        public void DisplayWeather(WeatherResponse weather, RichTextBox textBox, string cityName)
         {
             textBox.AppendText($"{cityName}. Прогноз погоды на текущий день:\n");
             textBox.AppendText("\nПогода: " + weather.description);
@@ -55,6 +64,6 @@ namespace WeatherParserHttpGet
         }
     }
 
-    
+
 
 }
