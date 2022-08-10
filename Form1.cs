@@ -6,7 +6,7 @@ namespace WeatherParserHttpGet
     {
         public static string selectedCity;
 
-        public static List<string> selectedCityList;
+        public static List<string> selectedCityList = new List<string>();
 
         public Form1()
         {
@@ -17,10 +17,11 @@ namespace WeatherParserHttpGet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(selectedCity), richTextBox1, selectedCity);
+            progressBar1.Maximum = selectedCityList.Count() - 1;
 
-            for (int i = 0; i <= 100; i++)
+            for (int i = 0; i < selectedCityList.Count(); i++)
             {
+                Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(selectedCityList[i]), richTextBox1, selectedCityList[i]);
                 progressBar1.Value = i;
             }
         }
@@ -92,11 +93,7 @@ namespace WeatherParserHttpGet
         {
             button1.Enabled = true;
 
-            MessageBox.Show(citiesCheckedListBox.SelectedItem.ToString());
-
-
-            
-            
+            selectedCityList.Add(citiesCheckedListBox.SelectedItem.ToString());
         }
     }
 
