@@ -58,7 +58,12 @@ namespace WeatherParserHttpGet
 
         private void оПрограммеToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Как пользоваться программой:\n" +
+                "1) Выберите регион\n" +
+                "2) Выберите один или несколько городов\n" +
+                "3) Нажмите кнопку [Узнать погоду]\n" +
+                "4) При необходимости сохраните данные в файл\n" +
+                "5) Нажмите кнопку [Очистить данные] и узнавайте погоду по другим городам!");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -101,6 +106,22 @@ namespace WeatherParserHttpGet
         private void clearRichTextBox_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(Environment.CurrentDirectory + "/weather.txt", richTextBox1.Text.ToString());
+            MessageBox.Show("Погода успешно сохранена в файл weather.txt в папке программы");
+        }
+
+        private void оПрограммеToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)\nРазработчик: Айдар Салахов\nКазань, 2022");
         }
     }
 
