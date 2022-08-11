@@ -45,6 +45,10 @@ namespace WeatherParserHttpGet
             }
         }
 
+        public async Task<WeatherResponse> GetWeatherAsync(string city)
+        {
+            return await Task.Run(() => GetWeather(city));
+        }
 
         public void DisplayWeather(WeatherResponse weather, RichTextBox textBox, string cityName)
         {

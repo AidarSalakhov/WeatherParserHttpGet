@@ -15,7 +15,7 @@ namespace WeatherParserHttpGet
             regionsListBox.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
 
@@ -23,7 +23,8 @@ namespace WeatherParserHttpGet
 
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
-                Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(selectedCityList[i]), richTextBox1, selectedCityList[i]);
+                var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
+                Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
                 progressBar.Value = i;
             }
 
