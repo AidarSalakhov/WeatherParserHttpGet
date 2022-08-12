@@ -40,7 +40,6 @@ namespace WeatherParserHttpGet
             selectedCityList.Clear();
 
             bGetWeather.Enabled = false;
-            bClearRichTextBox.Enabled = true;
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -122,7 +121,6 @@ namespace WeatherParserHttpGet
         {
             progressBar.Value = 0;
             richTextBox1.Clear();
-            bClearRichTextBox.Enabled = false;
         }
 
         private void ‚˚ıÓ‰ToolStripMenuItem_Click(object sender, EventArgs e)

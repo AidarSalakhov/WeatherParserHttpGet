@@ -46,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.citiesCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.bClearRichTextBox = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -204,24 +203,11 @@
             this.citiesCheckedListBox.TabIndex = 12;
             this.citiesCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
-            // bClearRichTextBox
-            // 
-            this.bClearRichTextBox.BackColor = System.Drawing.Color.Gold;
-            this.bClearRichTextBox.Enabled = false;
-            this.bClearRichTextBox.Location = new System.Drawing.Point(488, 329);
-            this.bClearRichTextBox.Name = "bClearRichTextBox";
-            this.bClearRichTextBox.Size = new System.Drawing.Size(133, 43);
-            this.bClearRichTextBox.TabIndex = 13;
-            this.bClearRichTextBox.Text = "Очистить данные";
-            this.bClearRichTextBox.UseVisualStyleBackColor = false;
-            this.bClearRichTextBox.Click += new System.EventHandler(this.clearRichTextBox_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 433);
-            this.Controls.Add(this.bClearRichTextBox);
             this.Controls.Add(this.citiesCheckedListBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -268,6 +254,5 @@
         private Label label3;
         private Label label4;
         private CheckedListBox citiesCheckedListBox;
-        private Button bClearRichTextBox;
     }
 }
