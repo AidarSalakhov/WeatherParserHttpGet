@@ -30,6 +30,11 @@ namespace WeatherParserHttpGet
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
                 progressBar.Value = i;
+                if (selectedCityList.Count() == 1)
+                {
+                    progressBar.Maximum = selectedCityList.Count();
+                    progressBar.Value = i+1;
+                }
                 labelDownloadStatus.Text = $"Стостояние загрузки {(int)Math.Round((double)(100 * (i + 1)) / selectedCityList.Count())}%";
                 var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
                 Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
