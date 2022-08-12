@@ -43,7 +43,7 @@
             this.regionsListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelDownloadStatus = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.citiesCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.menuStrip1.SuspendLayout();
@@ -57,7 +57,7 @@
             this.bGetWeather.Location = new System.Drawing.Point(487, 377);
             this.bGetWeather.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bGetWeather.Name = "bGetWeather";
-            this.bGetWeather.Size = new System.Drawing.Size(134, 42);
+            this.bGetWeather.Size = new System.Drawing.Size(145, 42);
             this.bGetWeather.TabIndex = 0;
             this.bGetWeather.Text = "Узнать погоду";
             this.bGetWeather.UseVisualStyleBackColor = false;
@@ -72,7 +72,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(633, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(644, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -126,10 +126,10 @@
             // progressBar
             // 
             this.progressBar.BackColor = System.Drawing.Color.DimGray;
-            this.progressBar.Location = new System.Drawing.Point(487, 235);
+            this.progressBar.Location = new System.Drawing.Point(487, 327);
             this.progressBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(134, 33);
+            this.progressBar.Size = new System.Drawing.Size(145, 33);
             this.progressBar.TabIndex = 4;
             this.progressBar.Click += new System.EventHandler(this.progressBar1_Click);
             // 
@@ -175,14 +175,15 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Выберите город";
             // 
-            // label3
+            // labelDownloadStatus
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(487, 217);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Состояние загрузки";
+            this.labelDownloadStatus.AutoSize = true;
+            this.labelDownloadStatus.Location = new System.Drawing.Point(487, 310);
+            this.labelDownloadStatus.Name = "labelDownloadStatus";
+            this.labelDownloadStatus.Size = new System.Drawing.Size(116, 15);
+            this.labelDownloadStatus.TabIndex = 10;
+            this.labelDownloadStatus.Text = "Состояние загрузки";
+            this.labelDownloadStatus.Click += new System.EventHandler(this.labelDownloadStatus_Click);
             // 
             // label4
             // 
@@ -207,10 +208,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 433);
+            this.ClientSize = new System.Drawing.Size(644, 433);
             this.Controls.Add(this.citiesCheckedListBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelDownloadStatus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.regionsListBox);
@@ -251,7 +252,7 @@
         private ListBox regionsListBox;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label labelDownloadStatus;
         private Label label4;
         private CheckedListBox citiesCheckedListBox;
     }

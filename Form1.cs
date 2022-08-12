@@ -2,7 +2,7 @@ using System.Text;
 
 namespace WeatherParserHttpGet
 {
-    
+
 
     public partial class Form1 : Form
     {
@@ -21,25 +21,24 @@ namespace WeatherParserHttpGet
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            bGetWeather.Enabled = false;
+
             richTextBox1.Clear();
 
             progressBar.Maximum = selectedCityList.Count() - 1;
 
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
+                progressBar.Value = i;
+                labelDownloadStatus.Text = $"Стостояние загрузки {(int)Math.Round((double)(100 * (i + 1)) / selectedCityList.Count())}%";
                 var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
                 Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
-                progressBar.Value = i;
             }
 
             foreach (int i in citiesCheckedListBox.CheckedIndices)
-            {
                 citiesCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
-            }
-            
-            selectedCityList.Clear();
 
-            bGetWeather.Enabled = false;
+            selectedCityList.Clear();
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -52,7 +51,7 @@ namespace WeatherParserHttpGet
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -148,7 +147,12 @@ namespace WeatherParserHttpGet
                 "\nПарсинг погоды производится с сайта: https://goweather.herokuapp.com/weather/" +
                 "\nПарсинг городов производится с сайта: https://world-weather.ru/pogoda/russia/");
         }
+
+        private void labelDownloadStatus_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
-    
+
 }
