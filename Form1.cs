@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace WeatherParserHttpGet
 {
     
@@ -8,6 +10,8 @@ namespace WeatherParserHttpGet
 
         public static List<string> selectedCityList = new List<string>();
 
+        private static SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
         public Form1()
         {
             InitializeComponent();
@@ -15,7 +19,7 @@ namespace WeatherParserHttpGet
             regionsListBox.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
 
@@ -23,7 +27,8 @@ namespace WeatherParserHttpGet
 
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
-                Program.weatherResponse.DisplayWeather(Program.weatherResponse.GetWeather(selectedCityList[i]), richTextBox1, selectedCityList[i]);
+                var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
+                Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
                 progressBar.Value = i;
             }
 
@@ -127,8 +132,14 @@ namespace WeatherParserHttpGet
 
         private void ñîõðàíèòüToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(Environment.CurrentDirectory + "/weather.txt", richTextBox1.Text.ToString());
-            MessageBox.Show("Ïîãîäà óñïåøíî ñîõðàíåíà â ôàéë weather.txt â ïàïêå ïðîãðàììû");
+            saveFileDialog1.FileName = "Ïîãîäà";
+            saveFileDialog1.Filter = "Text (*.txt)|*.txt|Word Doc (*.doc)|*.doc";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog1.FileName, richTextBox1.Text.ToString(), Encoding.UTF8);
+                MessageBox.Show("Ôàéë ñîõðàíåí");
+            }
         }
 
         private void îÏðîãðàììåToolStripMenuItem2_Click(object sender, EventArgs e)
