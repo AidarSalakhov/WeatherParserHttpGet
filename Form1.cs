@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace WeatherParserHttpGet
 {
     
@@ -7,6 +9,8 @@ namespace WeatherParserHttpGet
         public static string selectedCity;
 
         public static List<string> selectedCityList = new List<string>();
+
+        private static SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
         public Form1()
         {
@@ -128,8 +132,14 @@ namespace WeatherParserHttpGet
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(Environment.CurrentDirectory + "/weather.txt", richTextBox1.Text.ToString());
-            MessageBox.Show("Погода успешно сохранена в файл weather.txt в папке программы");
+            saveFileDialog1.FileName = "Погода";
+            saveFileDialog1.Filter = "Text (*.txt)|*.txt|Word Doc (*.doc)|*.doc";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog1.FileName, richTextBox1.Text.ToString(), Encoding.UTF8);
+                MessageBox.Show("Файл сохранен");
+            }
         }
 
         private void оПрограммеToolStripMenuItem2_Click(object sender, EventArgs e)
