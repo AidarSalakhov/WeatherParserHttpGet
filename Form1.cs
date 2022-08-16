@@ -2,14 +2,10 @@ using System.Text;
 
 namespace WeatherParserHttpGet
 {
-
-
     public partial class Form1 : Form
     {
         public static string selectedCity;
-
         public static List<string> selectedCityList = new List<string>();
-
         private static SaveFileDialog saveFileDialog = new SaveFileDialog();
 
         public Form1()
@@ -23,6 +19,7 @@ namespace WeatherParserHttpGet
         {
             bGetWeather.Enabled = false;
             richTextBox1.Clear();
+            selectedCityList = citiesCheckedListBox.CheckedItems.Cast<string>().ToList();
             progressBar.Maximum = selectedCityList.Count() - 1;
 
             for (int i = 0; i < selectedCityList.Count(); i++)
@@ -36,14 +33,8 @@ namespace WeatherParserHttpGet
                     progressBar.Maximum = selectedCityList.Count();
                     progressBar.Value = i+1;
                 }
-
                 labelDownloadStatus.Text = $"Стостояние загрузки {(int)Math.Round((double)(100 * (i + 1)) / selectedCityList.Count())}%";
             }
-
-            foreach (int i in citiesCheckedListBox.CheckedIndices)
-                citiesCheckedListBox.SetItemCheckState(i, CheckState.Unchecked);
-
-            selectedCityList.Clear();
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -116,7 +107,9 @@ namespace WeatherParserHttpGet
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             bGetWeather.Enabled = true;
-            selectedCityList.Add(citiesCheckedListBox.SelectedItem.ToString());
+
+            if (Convert.ToInt32(citiesCheckedListBox.CheckedItems.Count.ToString()) < 1)
+                bGetWeather.Enabled = false;
         }
 
         private void clearRichTextBox_Click(object sender, EventArgs e)
@@ -156,6 +149,4 @@ namespace WeatherParserHttpGet
 
         }
     }
-
-
 }
