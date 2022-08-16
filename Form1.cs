@@ -2,43 +2,43 @@ using System.Text;
 
 namespace WeatherParserHttpGet
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         public static string selectedCity;
         public static List<string> selectedCityList = new List<string>();
         private static SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
-            Program.regions.PrintRegions(Regions.ParseRegions(), regionsListBox);
+            Program.regions.PrintRegions(Regions.ParseRegions(), listBoxRegions);
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void buttonGetWeather_Click(object sender, EventArgs e)
         {
-            bGetWeather.Enabled = false;
-            richTextBox1.Clear();
-            selectedCityList = citiesCheckedListBox.CheckedItems.Cast<string>().ToList();
+            buttonGetWeather.Enabled = false;
+            richTextBoxWeather.Clear();
+            selectedCityList = checkedListBoxCities.CheckedItems.Cast<string>().ToList();
             progressBar.Maximum = selectedCityList.Count();
 
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
                 var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
-                Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
+                Program.weatherResponse.DisplayWeather(weather, richTextBoxWeather, selectedCityList[i]);
                 progressBar.Value = i + 1;
                 labelDownloadStatus.Text = $"Ñòîñòîÿíèå çàãðóçêè {(int)Math.Round((double)(100 * (i + 1)) / selectedCityList.Count())}%";
             }
         }
 
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void listBoxRegions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedRegion = regionsListBox.SelectedItem.ToString();
+            string selectedRegion = listBoxRegions.SelectedItem.ToString();
             Cities.listOfCities.Clear();
             Cities.listOfCities = Cities.ParseCities(Regions.GetRegionUrl(selectedRegion));
-            Program.cities.PrintCities(Cities.listOfCities, citiesCheckedListBox);
+            Program.cities.PrintCities(Cities.listOfCities, checkedListBoxCities);
         }
 
-        private void îÏðîãðàììåToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void toolStripMenuItemInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Êàê ïîëüçîâàòüñÿ ïðîãðàììîé:\n" +
                 "1) Âûáåðèòå ðåãèîí\n" +
@@ -47,19 +47,19 @@ namespace WeatherParserHttpGet
                 "4) Ïðè íåîáõîäèìîñòè ñîõðàíèòå äàííûå â ôàéë\n");
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void checkedListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bGetWeather.Enabled = true;
+            buttonGetWeather.Enabled = true;
 
-            if (Convert.ToInt32(citiesCheckedListBox.CheckedItems.Count.ToString()) < 1)
-                bGetWeather.Enabled = false;
+            if (Convert.ToInt32(checkedListBoxCities.CheckedItems.Count.ToString()) < 1)
+                buttonGetWeather.Enabled = false;
         }
-        private void âûõîäToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItemExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void ñîõðàíèòüToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItemSave_Click(object sender, EventArgs e)
         {
             if (selectedCityList.Count < 1)
             {
@@ -72,12 +72,12 @@ namespace WeatherParserHttpGet
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(saveFileDialog.FileName, richTextBox1.Text.ToString(), Encoding.UTF8);
+                File.WriteAllText(saveFileDialog.FileName, richTextBoxWeather.Text.ToString(), Encoding.UTF8);
                 MessageBox.Show("Ôàéë ñîõðàíåí");
             }
         }
 
-        private void îÏðîãðàììåToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void toolStripMenuItemAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ïðîãðàììà: Weather Parser HTTP GET v 1.0 (ñ)" +
                 "\nÐàçðàáîò÷èê: Àéäàð Ñàëàõîâ" +

@@ -1,6 +1,6 @@
 ﻿namespace WeatherParserHttpGet
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,100 +29,100 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.bGetWeather = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            this.buttonGetWeather = new System.Windows.Forms.Button();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxWeather = new System.Windows.Forms.RichTextBox();
             this.forecastBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.regionsListBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.listBoxRegions = new System.Windows.Forms.ListBox();
+            this.labelRegions = new System.Windows.Forms.Label();
+            this.labelCities = new System.Windows.Forms.Label();
             this.labelDownloadStatus = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.citiesCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.menuStrip1.SuspendLayout();
+            this.labelWeather = new System.Windows.Forms.Label();
+            this.checkedListBoxCities = new System.Windows.Forms.CheckedListBox();
+            this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // bGetWeather
+            // buttonGetWeather
             // 
-            this.bGetWeather.BackColor = System.Drawing.Color.Gold;
-            this.bGetWeather.Enabled = false;
-            this.bGetWeather.Location = new System.Drawing.Point(551, 502);
-            this.bGetWeather.Name = "bGetWeather";
-            this.bGetWeather.Size = new System.Drawing.Size(166, 56);
-            this.bGetWeather.TabIndex = 0;
-            this.bGetWeather.Text = "Узнать погоду";
-            this.bGetWeather.UseVisualStyleBackColor = false;
-            this.bGetWeather.Click += new System.EventHandler(this.button1_Click);
+            this.buttonGetWeather.BackColor = System.Drawing.Color.Gold;
+            this.buttonGetWeather.Enabled = false;
+            this.buttonGetWeather.Location = new System.Drawing.Point(551, 502);
+            this.buttonGetWeather.Name = "buttonGetWeather";
+            this.buttonGetWeather.Size = new System.Drawing.Size(166, 56);
+            this.buttonGetWeather.TabIndex = 0;
+            this.buttonGetWeather.Text = "Узнать погоду";
+            this.buttonGetWeather.UseVisualStyleBackColor = false;
+            this.buttonGetWeather.Click += new System.EventHandler(this.buttonGetWeather_Click);
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.оПрограммеToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(743, 30);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemFile,
+            this.toolStripMenuItemHelp});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            this.menuStrip.Size = new System.Drawing.Size(743, 30);
+            this.menuStrip.TabIndex = 3;
+            this.menuStrip.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            // toolStripMenuItemFile
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьToolStripMenuItem,
-            this.выходToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.файлToolStripMenuItem.Text = "Файл";
+            this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSave,
+            this.toolStripMenuItemExit});
+            this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
+            this.toolStripMenuItemFile.Size = new System.Drawing.Size(59, 24);
+            this.toolStripMenuItemFile.Text = "Файл";
             // 
-            // сохранитьToolStripMenuItem
+            // toolStripMenuItemSave
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            this.toolStripMenuItemSave.Name = "toolStripMenuItemSave";
+            this.toolStripMenuItemSave.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemSave.Text = "Сохранить";
+            this.toolStripMenuItemSave.Click += new System.EventHandler(this.toolStripMenuItemSave_Click);
             // 
-            // выходToolStripMenuItem
+            // toolStripMenuItemExit
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
+            this.toolStripMenuItemExit.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItemExit.Text = "Выход";
+            this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
-            // оПрограммеToolStripMenuItem
+            // toolStripMenuItemHelp
             // 
-            this.оПрограммеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оПрограммеToolStripMenuItem1,
-            this.оПрограммеToolStripMenuItem2});
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.оПрограммеToolStripMenuItem.Text = "Помощь";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            this.toolStripMenuItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemInfo,
+            this.toolStripMenuItemAbout});
+            this.toolStripMenuItemHelp.Name = "toolStripMenuItemHelp";
+            this.toolStripMenuItemHelp.Size = new System.Drawing.Size(83, 24);
+            this.toolStripMenuItemHelp.Text = "Помощь";
+            this.toolStripMenuItemHelp.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
-            // оПрограммеToolStripMenuItem1
+            // toolStripMenuItemInfo
             // 
-            this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
-            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(187, 26);
-            this.оПрограммеToolStripMenuItem1.Text = "Справка";
-            this.оПрограммеToolStripMenuItem1.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem1_Click);
+            this.toolStripMenuItemInfo.Name = "toolStripMenuItemInfo";
+            this.toolStripMenuItemInfo.Size = new System.Drawing.Size(187, 26);
+            this.toolStripMenuItemInfo.Text = "Справка";
+            this.toolStripMenuItemInfo.Click += new System.EventHandler(this.toolStripMenuItemInfo_Click);
             // 
-            // оПрограммеToolStripMenuItem2
+            // toolStripMenuItemAbout
             // 
-            this.оПрограммеToolStripMenuItem2.Name = "оПрограммеToolStripMenuItem2";
-            this.оПрограммеToolStripMenuItem2.Size = new System.Drawing.Size(187, 26);
-            this.оПрограммеToolStripMenuItem2.Text = "О программе";
-            this.оПрограммеToolStripMenuItem2.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem2_Click);
+            this.toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
+            this.toolStripMenuItemAbout.Size = new System.Drawing.Size(187, 26);
+            this.toolStripMenuItemAbout.Text = "О программе";
+            this.toolStripMenuItemAbout.Click += new System.EventHandler(this.toolStripMenuItemAbout_Click);
             // 
             // progressBar
             // 
@@ -133,49 +133,49 @@
             this.progressBar.TabIndex = 4;
             this.progressBar.Click += new System.EventHandler(this.progressBar1_Click);
             // 
-            // richTextBox1
+            // richTextBoxWeather
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(14, 63);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(515, 208);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.richTextBoxWeather.Location = new System.Drawing.Point(14, 63);
+            this.richTextBoxWeather.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.richTextBoxWeather.Name = "richTextBoxWeather";
+            this.richTextBoxWeather.Size = new System.Drawing.Size(515, 208);
+            this.richTextBoxWeather.TabIndex = 5;
+            this.richTextBoxWeather.Text = "";
+            this.richTextBoxWeather.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // forecastBindingSource
             // 
             this.forecastBindingSource.DataSource = typeof(WeatherParserHttpGet.Forecast);
             // 
-            // regionsListBox
+            // listBoxRegions
             // 
-            this.regionsListBox.FormattingEnabled = true;
-            this.regionsListBox.ItemHeight = 20;
-            this.regionsListBox.Location = new System.Drawing.Point(14, 314);
-            this.regionsListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.regionsListBox.Name = "regionsListBox";
-            this.regionsListBox.Size = new System.Drawing.Size(259, 244);
-            this.regionsListBox.TabIndex = 6;
-            this.regionsListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            this.listBoxRegions.FormattingEnabled = true;
+            this.listBoxRegions.ItemHeight = 20;
+            this.listBoxRegions.Location = new System.Drawing.Point(14, 314);
+            this.listBoxRegions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBoxRegions.Name = "listBoxRegions";
+            this.listBoxRegions.Size = new System.Drawing.Size(259, 244);
+            this.listBoxRegions.TabIndex = 6;
+            this.listBoxRegions.SelectedIndexChanged += new System.EventHandler(this.listBoxRegions_SelectedIndexChanged);
             // 
-            // label1
+            // labelRegions
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 290);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Выберите регион";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.labelRegions.AutoSize = true;
+            this.labelRegions.Location = new System.Drawing.Point(14, 290);
+            this.labelRegions.Name = "labelRegions";
+            this.labelRegions.Size = new System.Drawing.Size(132, 20);
+            this.labelRegions.TabIndex = 8;
+            this.labelRegions.Text = "Выберите регион";
+            this.labelRegions.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // labelCities
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(279, 290);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Выберите город";
+            this.labelCities.AutoSize = true;
+            this.labelCities.Location = new System.Drawing.Point(279, 290);
+            this.labelCities.Name = "labelCities";
+            this.labelCities.Size = new System.Drawing.Size(123, 20);
+            this.labelCities.TabIndex = 9;
+            this.labelCities.Text = "Выберите город";
             // 
             // labelDownloadStatus
             // 
@@ -187,52 +187,52 @@
             this.labelDownloadStatus.Text = "Состояние загрузки";
             this.labelDownloadStatus.Click += new System.EventHandler(this.labelDownloadStatus_Click);
             // 
-            // label4
+            // labelWeather
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Погода";
+            this.labelWeather.AutoSize = true;
+            this.labelWeather.Location = new System.Drawing.Point(14, 39);
+            this.labelWeather.Name = "labelWeather";
+            this.labelWeather.Size = new System.Drawing.Size(60, 20);
+            this.labelWeather.TabIndex = 11;
+            this.labelWeather.Text = "Погода";
             // 
-            // citiesCheckedListBox
+            // checkedListBoxCities
             // 
-            this.citiesCheckedListBox.CheckOnClick = true;
-            this.citiesCheckedListBox.FormattingEnabled = true;
-            this.citiesCheckedListBox.Location = new System.Drawing.Point(279, 313);
-            this.citiesCheckedListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.citiesCheckedListBox.Name = "citiesCheckedListBox";
-            this.citiesCheckedListBox.Size = new System.Drawing.Size(250, 246);
-            this.citiesCheckedListBox.TabIndex = 12;
-            this.citiesCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.checkedListBoxCities.CheckOnClick = true;
+            this.checkedListBoxCities.FormattingEnabled = true;
+            this.checkedListBoxCities.Location = new System.Drawing.Point(279, 313);
+            this.checkedListBoxCities.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkedListBoxCities.Name = "checkedListBoxCities";
+            this.checkedListBoxCities.Size = new System.Drawing.Size(250, 246);
+            this.checkedListBoxCities.TabIndex = 12;
+            this.checkedListBoxCities.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxCities_SelectedIndexChanged);
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 577);
-            this.Controls.Add(this.citiesCheckedListBox);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkedListBoxCities);
+            this.Controls.Add(this.labelWeather);
             this.Controls.Add(this.labelDownloadStatus);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.regionsListBox);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.labelCities);
+            this.Controls.Add(this.labelRegions);
+            this.Controls.Add(this.listBoxRegions);
+            this.Controls.Add(this.richTextBoxWeather);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.bGetWeather);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.buttonGetWeather);
+            this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Weather Parser HTTP GET";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,22 +241,22 @@
 
         #endregion
 
-        private Button bGetWeather;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem файлToolStripMenuItem;
-        private ToolStripMenuItem сохранитьToolStripMenuItem;
-        private ToolStripMenuItem выходToolStripMenuItem;
-        private ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private ToolStripMenuItem оПрограммеToolStripMenuItem1;
-        private ToolStripMenuItem оПрограммеToolStripMenuItem2;
+        private Button buttonGetWeather;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem toolStripMenuItemFile;
+        private ToolStripMenuItem toolStripMenuItemSave;
+        private ToolStripMenuItem toolStripMenuItemExit;
+        private ToolStripMenuItem toolStripMenuItemHelp;
+        private ToolStripMenuItem toolStripMenuItemInfo;
+        private ToolStripMenuItem toolStripMenuItemAbout;
         private ProgressBar progressBar;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxWeather;
         private BindingSource forecastBindingSource;
-        private ListBox regionsListBox;
-        private Label label1;
-        private Label label2;
+        private ListBox listBoxRegions;
+        private Label labelRegions;
+        private Label labelCities;
         private Label labelDownloadStatus;
-        private Label label4;
-        private CheckedListBox citiesCheckedListBox;
+        private Label labelWeather;
+        private CheckedListBox checkedListBoxCities;
     }
 }

@@ -15,7 +15,7 @@ namespace WeatherParserHttpGet
         {
             Init();
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new FormMain());
         }
 
         static void Init()
