@@ -20,19 +20,13 @@ namespace WeatherParserHttpGet
             bGetWeather.Enabled = false;
             richTextBox1.Clear();
             selectedCityList = citiesCheckedListBox.CheckedItems.Cast<string>().ToList();
-            progressBar.Maximum = selectedCityList.Count() - 1;
+            progressBar.Maximum = selectedCityList.Count();
 
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
                 var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
                 Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
-                progressBar.Value = i;
-
-                if (selectedCityList.Count() == 1)
-                {
-                    progressBar.Maximum = selectedCityList.Count();
-                    progressBar.Value = i+1;
-                }
+                progressBar.Value = i + 1;
                 labelDownloadStatus.Text = $"Ñòîñòîÿíèå çàãðóçêè {(int)Math.Round((double)(100 * (i + 1)) / selectedCityList.Count())}%";
             }
         }
@@ -114,8 +108,7 @@ namespace WeatherParserHttpGet
 
         private void clearRichTextBox_Click(object sender, EventArgs e)
         {
-            progressBar.Value = 0;
-            richTextBox1.Clear();
+            
         }
 
         private void âûõîäToolStripMenuItem_Click(object sender, EventArgs e)
