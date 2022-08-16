@@ -10,7 +10,7 @@ namespace WeatherParserHttpGet
 
         public static List<string> selectedCityList = new List<string>();
 
-        private static SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+        private static SaveFileDialog saveFileDialog = new SaveFileDialog();
 
         public Form1()
         {
@@ -22,22 +22,22 @@ namespace WeatherParserHttpGet
         private async void button1_Click(object sender, EventArgs e)
         {
             bGetWeather.Enabled = false;
-
             richTextBox1.Clear();
-
             progressBar.Maximum = selectedCityList.Count() - 1;
 
             for (int i = 0; i < selectedCityList.Count(); i++)
             {
+                var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
+                Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
                 progressBar.Value = i;
+
                 if (selectedCityList.Count() == 1)
                 {
                     progressBar.Maximum = selectedCityList.Count();
                     progressBar.Value = i+1;
                 }
+
                 labelDownloadStatus.Text = $"Стостояние загрузки {(int)Math.Round((double)(100 * (i + 1)) / selectedCityList.Count())}%";
-                var weather = await Program.weatherResponse.GetWeatherAsync(selectedCityList[i]);
-                Program.weatherResponse.DisplayWeather(weather, richTextBox1, selectedCityList[i]);
             }
 
             foreach (int i in citiesCheckedListBox.CheckedIndices)
@@ -116,7 +116,6 @@ namespace WeatherParserHttpGet
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             bGetWeather.Enabled = true;
-
             selectedCityList.Add(citiesCheckedListBox.SelectedItem.ToString());
         }
 
@@ -133,12 +132,12 @@ namespace WeatherParserHttpGet
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.FileName = "Погода";
-            saveFileDialog1.Filter = "Text (*.txt)|*.txt|Word Doc (*.doc)|*.doc";
+            saveFileDialog.FileName = "Погода";
+            saveFileDialog.Filter = "Text (*.txt)|*.txt|Word Doc (*.doc)|*.doc";
 
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(saveFileDialog1.FileName, richTextBox1.Text.ToString(), Encoding.UTF8);
+                File.WriteAllText(saveFileDialog.FileName, richTextBox1.Text.ToString(), Encoding.UTF8);
                 MessageBox.Show("Файл сохранен");
             }
         }
