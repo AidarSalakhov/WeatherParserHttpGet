@@ -15,14 +15,14 @@ namespace WeatherParserHttpGet
         public string wind { get; set; }
     }
 
-    public class WeatherResponse
+    public class WeatherParser
     {
         public string temperature { get; set; }
         public string wind { get; set; }
         public string description { get; set; }
         public List<Forecast> forecast { get; set; }
 
-        public WeatherResponse GetWeather(string city)
+        public WeatherParser GetWeather(string city)
         {
             string url = $"https://goweather.herokuapp.com/weather/{city}";
 
@@ -39,17 +39,18 @@ namespace WeatherParserHttpGet
                     response = "{\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\",\"description\":\"Нет данных\",\"forecast\":[{\"day\":\"1\",\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\"},{\"day\":\"2\",\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\"},{\"day\":\"3\",\"temperature\":\"Нет данных\",\"wind\":\"Нет данных\"}]}";
                 }
                 
-                WeatherResponse weather = JsonConvert.DeserializeObject<WeatherResponse>(response);
+                WeatherParser weather = JsonConvert.DeserializeObject<WeatherParser>(response);
+
                 return weather;
             }
         }
 
-        public async Task<WeatherResponse> GetWeatherAsync(string city)
+        public async Task<WeatherParser> GetWeatherAsync(string city)
         {
             return await Task.Run(() => GetWeather(city));
         }
 
-        public void DisplayWeather(WeatherResponse weather, RichTextBox textBox, string cityName)
+        public void DisplayWeather(WeatherParser weather, RichTextBox textBox, string cityName)
         {
             textBox.AppendText($"{cityName}. Прогноз погоды на текущий день:\n");
             textBox.AppendText("\nПогода: " + weather.description);
