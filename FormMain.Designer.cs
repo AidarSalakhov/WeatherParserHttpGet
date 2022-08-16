@@ -108,7 +108,6 @@
             this.toolStripMenuItemHelp.Name = "toolStripMenuItemHelp";
             this.toolStripMenuItemHelp.Size = new System.Drawing.Size(83, 24);
             this.toolStripMenuItemHelp.Text = "Помощь";
-            this.toolStripMenuItemHelp.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // toolStripMenuItemInfo
             // 
@@ -131,7 +130,6 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(166, 44);
             this.progressBar.TabIndex = 4;
-            this.progressBar.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // richTextBoxWeather
             // 
@@ -141,7 +139,6 @@
             this.richTextBoxWeather.Size = new System.Drawing.Size(515, 208);
             this.richTextBoxWeather.TabIndex = 5;
             this.richTextBoxWeather.Text = "";
-            this.richTextBoxWeather.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // forecastBindingSource
             // 
@@ -166,7 +163,6 @@
             this.labelRegions.Size = new System.Drawing.Size(132, 20);
             this.labelRegions.TabIndex = 8;
             this.labelRegions.Text = "Выберите регион";
-            this.labelRegions.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelCities
             // 
@@ -185,7 +181,6 @@
             this.labelDownloadStatus.Size = new System.Drawing.Size(147, 20);
             this.labelDownloadStatus.TabIndex = 10;
             this.labelDownloadStatus.Text = "Состояние загрузки";
-            this.labelDownloadStatus.Click += new System.EventHandler(this.labelDownloadStatus_Click);
             // 
             // labelWeather
             // 
@@ -230,7 +225,6 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Weather Parser HTTP GET";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forecastBindingSource)).EndInit();

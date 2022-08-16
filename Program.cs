@@ -2,9 +2,9 @@ namespace WeatherParserHttpGet
 {
     internal static class Program
     {
-        public static WeatherResponse weatherResponse;
-        public static Regions regions;
-        public static Cities cities;
+        public static WeatherParser weatherResponse;
+        public static RegionsParser regions;
+        public static CitiesParser cities;
 
 
         /// <summary>
@@ -20,9 +20,9 @@ namespace WeatherParserHttpGet
 
         static void Init()
         {
-            weatherResponse = new WeatherResponse();
-            regions = new Regions();
-            cities = new Cities();
+            weatherResponse = new WeatherParser();
+            regions = new RegionsParser();
+            cities = new CitiesParser();
         }
     }
 }

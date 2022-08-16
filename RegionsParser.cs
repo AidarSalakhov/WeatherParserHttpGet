@@ -7,16 +7,16 @@ using HtmlAgilityPack;
 
 namespace WeatherParserHttpGet
 {
-    internal class Regions
+    internal class RegionsParser
     {
         private string? _regionName { get; set; }
         private string? _regionUrl { get; set; }
+        public static List<RegionsParser> listOfRegions = new List<RegionsParser>();
 
-        public static List<Regions> listOfRegions = new List<Regions>();
-
-        public static List<Regions> ParseRegions()
+        public static List<RegionsParser> ParseRegions()
         {
             string url = "https://world-weather.ru/pogoda/russia/";
+
             try
             {
                 HtmlWeb htmlWeb = new HtmlWeb();
@@ -25,7 +25,7 @@ namespace WeatherParserHttpGet
 
                 foreach (var item in citiesReg)
                 {
-                    Regions region = new Regions();
+                    RegionsParser region = new RegionsParser();
                     region._regionName = item.InnerText;
                     region._regionUrl = item.GetAttributeValue("href", null);
                     listOfRegions.Add(region);
@@ -41,39 +41,24 @@ namespace WeatherParserHttpGet
 
             return listOfRegions;
         }
-
-        public static string GetRegionUrl(int regionNumber)
-        {
-            Regions region = new Regions();
-
-            region = listOfRegions[regionNumber - 1];
-
-            string url = region._regionUrl ?? string.Empty;
-
-            return url;
-        }
-
+                
         public static string GetRegionUrl(string regionName)
         {
             foreach (var region in listOfRegions)
             {
                 if (region._regionName == regionName)
-                {
                     return region._regionUrl;
-                }
             }
 
             return string.Empty;
         }
 
-        public void PrintRegions(List<Regions> regions, ListBox listBox)
+        public void PrintRegions(List<RegionsParser> regions, ListBox listBox)
         {
             string[] regionsList = new string[regions.Count];
 
             for (int i = 0; i < regionsList.Length; i++)
-            {
                 regionsList[i] = regions[i]._regionName;
-            }
 
             listBox.Items.AddRange(regionsList);
         }
