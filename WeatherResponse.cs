@@ -40,7 +40,6 @@ namespace WeatherParserHttpGet
                 }
                 
                 WeatherResponse weather = JsonConvert.DeserializeObject<WeatherResponse>(response);
-
                 return weather;
             }
         }
