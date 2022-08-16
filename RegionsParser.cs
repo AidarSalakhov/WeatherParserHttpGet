@@ -33,9 +33,7 @@ namespace WeatherParserHttpGet
             }
             catch (Exception)
             {
-                MessageBox.Show("Не удалось загрузить регионы.\n" +
-                    $"Сайт {url} недоступен.\n" +
-                    "Попробуйте позже.");
+                MessageBox.Show(Messages.REGIONS_PARSE_ERROR);
                 throw;
             }
 

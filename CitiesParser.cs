@@ -31,9 +31,7 @@ namespace WeatherParserHttpGet
             }
             catch (Exception)
             {
-                MessageBox.Show("Не удалось загрузить города этого региона.\n" +
-                    $"Сайт {url} недоступен.\n" +
-                    "Выберите другой регион, или попробуйте позже.");
+                MessageBox.Show(Messages.CITIES_PARSE_ERROR);
                 return listOfCities;
             }
 

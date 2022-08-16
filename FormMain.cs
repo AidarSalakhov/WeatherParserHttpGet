@@ -38,15 +38,6 @@ namespace WeatherParserHttpGet
             Program.cities.PrintCities(CitiesParser.listOfCities, checkedListBoxCities);
         }
 
-        private void toolStripMenuItemInfo_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Как пользоваться программой:\n" +
-                "1) Выберите регион\n" +
-                "2) Выберите один или несколько городов\n" +
-                "3) Нажмите кнопку [Узнать погоду]\n" +
-                "4) При необходимости сохраните данные в файл\n");
-        }
-
         private void checkedListBoxCities_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonGetWeather.Enabled = true;
@@ -54,23 +45,24 @@ namespace WeatherParserHttpGet
             if (Convert.ToInt32(checkedListBoxCities.CheckedItems.Count.ToString()) < 1)
                 buttonGetWeather.Enabled = false;
         }
-        private void toolStripMenuItemExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void toolStripMenuItemSave_Click(object sender, EventArgs e)
         {
             FileSaver.SaveFile(saveFileDialog, richTextBoxWeather);
         }
+        private void toolStripMenuItemExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripMenuItemInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Messages.INFO);
+        }
 
         private void toolStripMenuItemAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)" +
-                "\nРазработчик: Айдар Салахов" +
-                "\nКазань, 2022\n" +
-                "\nПарсинг погоды производится с сайта: https://goweather.herokuapp.com/weather/" +
-                "\nПарсинг городов производится с сайта: https://world-weather.ru/pogoda/russia/");
+            MessageBox.Show(Messages.ABOUT);
         }
     }
 }
