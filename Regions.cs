@@ -17,22 +17,26 @@ namespace WeatherParserHttpGet
         public static List<Regions> ParseRegions()
         {
             string url = "https://world-weather.ru/pogoda/russia/";
-
-            HtmlWeb htmlWeb = new HtmlWeb();
-
-            var htmlDoc = htmlWeb.Load(url);
-
-            var citiesReg = htmlDoc.DocumentNode.SelectNodes("//ul[@class='cities reg']//li[not(contains(@class,'cities-letter'))]//a[@href]");
-
-            foreach (var item in citiesReg)
+            try
             {
-                Regions region = new Regions();
+                HtmlWeb htmlWeb = new HtmlWeb();
+                var htmlDoc = htmlWeb.Load(url);
+                var citiesReg = htmlDoc.DocumentNode.SelectNodes("//ul[@class='cities reg']//li[not(contains(@class,'cities-letter'))]//a[@href]");
 
-                region._regionName = item.InnerText;
-
-                region._regionUrl = item.GetAttributeValue("href", null);
-
-                listOfRegions.Add(region);
+                foreach (var item in citiesReg)
+                {
+                    Regions region = new Regions();
+                    region._regionName = item.InnerText;
+                    region._regionUrl = item.GetAttributeValue("href", null);
+                    listOfRegions.Add(region);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не удалось загрузить регионы.\n" +
+                    $"Сайт {url} недоступен.\n" +
+                    "Попробуйте позже.");
+                throw;
             }
 
             return listOfRegions;

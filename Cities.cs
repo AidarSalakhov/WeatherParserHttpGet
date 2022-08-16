@@ -17,21 +17,26 @@ namespace WeatherParserHttpGet
 
         public static List<Cities> ParseCities(string url)
         {
-            HtmlWeb htmlWeb = new HtmlWeb();
-
-            var htmlDoc = htmlWeb.Load(url);
-
-            var cityBlock = htmlDoc.DocumentNode.SelectNodes("//li[@class='city-block']//a[@href]");
-
-            foreach (var item in cityBlock)
+            try
             {
-                Cities city = new Cities();
+                HtmlWeb htmlWeb = new HtmlWeb();
+                var htmlDoc = htmlWeb.Load(url);
+                var cityBlock = htmlDoc.DocumentNode.SelectNodes("//li[@class='city-block']//a[@href]");
 
-                city._cityName = item.InnerText;
-
-                city._cityUrl = item.GetAttributeValue("href", null);
-
-                listOfCities.Add(city);
+                foreach (var item in cityBlock)
+                {
+                    Cities city = new Cities();
+                    city._cityName = item.InnerText;
+                    city._cityUrl = item.GetAttributeValue("href", null);
+                    listOfCities.Add(city);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не удалось загрузить города этого региона.\n" +
+                    $"Сайт {url} недоступен.\n" +
+                    "Выберите другой регион, или попробуйте позже.");
+                return listOfCities;
             }
 
             return listOfCities;

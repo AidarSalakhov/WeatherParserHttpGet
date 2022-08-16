@@ -12,7 +12,6 @@ namespace WeatherParserHttpGet
         {
             InitializeComponent();
             Program.regions.PrintRegions(Regions.ParseRegions(), regionsListBox);
-            regionsListBox.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
         }
 
         private async void button1_Click(object sender, EventArgs e)
