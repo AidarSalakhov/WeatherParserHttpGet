@@ -39,6 +39,54 @@ namespace WeatherParserHttpGet
             Program.cities.PrintCities(Cities.listOfCities, citiesCheckedListBox);
         }
 
+        private void оПрограммеToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Как пользоваться программой:\n" +
+                "1) Выберите регион\n" +
+                "2) Выберите один или несколько городов\n" +
+                "3) Нажмите кнопку [Узнать погоду]\n" +
+                "4) При необходимости сохраните данные в файл\n");
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bGetWeather.Enabled = true;
+
+            if (Convert.ToInt32(citiesCheckedListBox.CheckedItems.Count.ToString()) < 1)
+                bGetWeather.Enabled = false;
+        }
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (selectedCityList.Count < 1)
+            {
+                MessageBox.Show("Нет данных для сохранения. Сначала получите данные о погоде.");
+                return;
+            }
+            
+            saveFileDialog.FileName = "Погода";
+            saveFileDialog.Filter = "Text (*.txt)|*.txt|Word Doc (*.doc)|*.doc";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog.FileName, richTextBox1.Text.ToString(), Encoding.UTF8);
+                MessageBox.Show("Файл сохранен");
+            }
+        }
+
+        private void оПрограммеToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)" +
+                "\nРазработчик: Айдар Салахов" +
+                "\nКазань, 2022\n" +
+                "\nПарсинг погоды производится с сайта: https://goweather.herokuapp.com/weather/" +
+                "\nПарсинг городов производится с сайта: https://world-weather.ru/pogoda/russia/");
+        }
+
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -57,15 +105,6 @@ namespace WeatherParserHttpGet
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void оПрограммеToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Как пользоваться программой:\n" +
-                "1) Выберите регион\n" +
-                "2) Выберите один или несколько городов\n" +
-                "3) Нажмите кнопку [Узнать погоду]\n" +
-                "4) При необходимости сохраните данные в файл\n");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -98,45 +137,11 @@ namespace WeatherParserHttpGet
 
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bGetWeather.Enabled = true;
-
-            if (Convert.ToInt32(citiesCheckedListBox.CheckedItems.Count.ToString()) < 1)
-                bGetWeather.Enabled = false;
-        }
-
         private void clearRichTextBox_Click(object sender, EventArgs e)
         {
             
         }
-
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            saveFileDialog.FileName = "Погода";
-            saveFileDialog.Filter = "Text (*.txt)|*.txt|Word Doc (*.doc)|*.doc";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                File.WriteAllText(saveFileDialog.FileName, richTextBox1.Text.ToString(), Encoding.UTF8);
-                MessageBox.Show("Файл сохранен");
-            }
-        }
-
-        private void оПрограммеToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Программа: Weather Parser HTTP GET v 1.0 (с)" +
-                "\nРазработчик: Айдар Салахов" +
-                "\nКазань, 2022\n" +
-                "\nПарсинг погоды производится с сайта: https://goweather.herokuapp.com/weather/" +
-                "\nПарсинг городов производится с сайта: https://world-weather.ru/pogoda/russia/");
-        }
-
+        
         private void labelDownloadStatus_Click(object sender, EventArgs e)
         {
 
