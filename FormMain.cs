@@ -33,9 +33,9 @@ namespace WeatherParserHttpGet
         private void listBoxRegions_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedRegion = listBoxRegions.SelectedItem.ToString();
-            CitiesParser.listOfCities.Clear();
-            CitiesParser.listOfCities = CitiesParser.ParseCities(RegionsParser.GetRegionUrl(selectedRegion));
-            Program.cities.PrintCities(CitiesParser.listOfCities, checkedListBoxCities);
+            Cities.listOfCities.Clear();
+            Cities.listOfCities = CitiesParser.ParseCities(RegionsParser.GetRegionUrl(selectedRegion));
+            Program.cities.PrintCities(Cities.listOfCities, checkedListBoxCities);
         }
 
         private void checkedListBoxCities_SelectedIndexChanged(object sender, EventArgs e)

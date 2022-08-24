@@ -9,11 +9,7 @@ namespace WeatherParserHttpGet
 {
     internal class CitiesParser
     {
-        private string? _cityName;
-        private string? _cityUrl;
-        public static List<CitiesParser> listOfCities = new List<CitiesParser>();
-
-        public static List<CitiesParser> ParseCities(string url)
+        public static List<Cities> ParseCities(string url)
         {
             try
             {
@@ -23,27 +19,27 @@ namespace WeatherParserHttpGet
 
                 foreach (var item in cityBlock)
                 {
-                    CitiesParser city = new CitiesParser();
-                    city._cityName = item.InnerText;
-                    city._cityUrl = item.GetAttributeValue("href", null);
-                    listOfCities.Add(city);
+                    Cities city = new Cities();
+                    city.cityName = item.InnerText;
+                    city.cityUrl = item.GetAttributeValue("href", null);
+                    Cities.listOfCities.Add(city);
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show(Messages.CITIES_PARSE_ERROR);
-                return listOfCities;
+                return Cities.listOfCities;
             }
 
-            return listOfCities;
+            return Cities.listOfCities;
         }
 
-        public void PrintCities(List<CitiesParser> cities, ListBox listBox)
+        public void PrintCities(List<Cities> cities, ListBox listBox)
         {
             string[] citiesList = new string[cities.Count];
 
             for (int i = 0; i < citiesList.Length; i++)
-                citiesList[i] = cities[i]._cityName;
+                citiesList[i] = cities[i].cityName;
 
             listBox.Items.Clear();
             listBox.Items.AddRange(citiesList);
