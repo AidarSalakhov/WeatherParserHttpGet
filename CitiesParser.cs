@@ -27,7 +27,7 @@ namespace WeatherParserHttpGet
             }
             catch (Exception)
             {
-                MessageBox.Show(Messages.CITIES_PARSE_ERROR);
+                MessageBox.Show(Messages.messages.GetValueOrDefault("CITIES_PARSE_ERROR"));
                 return Cities.listOfCities;
             }
 

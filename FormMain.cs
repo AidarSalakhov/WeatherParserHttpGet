@@ -57,12 +57,12 @@ namespace WeatherParserHttpGet
 
         private void toolStripMenuItemInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Messages.INFO);
+            MessageBox.Show(Messages.messages.GetValueOrDefault("INFO"));
         }
 
         private void toolStripMenuItemAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Messages.ABOUT);
+            MessageBox.Show(Messages.messages.GetValueOrDefault("ABOUT"));
         }
     }
 }
