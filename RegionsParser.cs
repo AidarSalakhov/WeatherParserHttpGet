@@ -29,7 +29,7 @@ namespace WeatherParserHttpGet
             }
             catch (Exception)
             {
-                MessageBox.Show(Messages.REGIONS_PARSE_ERROR);
+                MessageBox.Show(Messages.messages.GetValueOrDefault("REGIONS_PARSE_ERROR"));
                 throw;
             }
 

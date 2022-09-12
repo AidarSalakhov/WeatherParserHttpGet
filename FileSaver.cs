@@ -12,7 +12,7 @@ namespace WeatherParserHttpGet
         {
             if (FormMain.selectedCityList.Count < 1)
             {
-                MessageBox.Show(Messages.NO_DATA_ERROR);
+                MessageBox.Show(Messages.messages.GetValueOrDefault("NO_DATA_ERROR"));
                 return;
             }
 
@@ -22,7 +22,7 @@ namespace WeatherParserHttpGet
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(saveFileDialog.FileName, richTextBoxWeather.Text.ToString(), Encoding.UTF8);
-                MessageBox.Show(Messages.FILE_SAVED);
+                MessageBox.Show(Messages.messages.GetValueOrDefault("FILE_SAVED"));
             }
         }
     }
